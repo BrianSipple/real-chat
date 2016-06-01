@@ -1,22 +1,23 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - npm install phantomjs-prebuilt
-
+- npm config set spin false
+- npm install -g bower
+- npm install phantomjs-prebuilt
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: DYsX60tT3J62m9dJO8jlfdEoTf9pPCBTDtbvocvxMr3Y0ejS77e6pO+o+ai2T44neNFlh0GSZbnUqc6T750Bb+OIN2rO0dn/+f06Byfq7xHOAR+n3Ub2QEsOLtDmSkzUtKpIwFQu/1G0sdhk65/YgwtcisChAVtO22l1LoLKEfgCxTUEv3sDyhd7mUI0IxomNUmQpMcp6BAFy9+4SieDi7heLg+taWXcmnkPQr0nHgVsbk84pHg56CjADpzRCdoHvFKlyM7aPV5D67o5HJZ1VWk4aMnourEyDF/Amb1OVWWdqXD5F0ZnfflvgcgMefcSrQ6wGSlrf84HP5lqxrPh+sOGKqgaZ4fqUUB7rogtdkxFjsnw7bW9DiP0N5CgePnG1P0TACz910XKF2hZCSRHg0HN6XY1SoRLdGaUrAo6NBlsSXUOU1iWhQKjmW+/xjj3mkRpmsyscpB2kCcUEGekJyn24KE3onYnXVC2zUYlTiwI62f1hBQKMrjZvAmzdORxv4/nL4XOT0+88GFmfEvD8keQtRPZCUTd6Jz5AMZ0Ho6VUkohwBxxGJl5ox6+tHu6pYI2E0QEtQbOyJzCBdbWxqs+JHOK0GIusLKODEmWMVjC37HvRynhZPsYOPUt26LHQIn+Gu2invH+COtZIB8Ki8XfaDFJY+TI1+gzriNjlNI=
+  app: real-chat-rtc
+  on:
+    repo: BrianSipple/real-chat-client
