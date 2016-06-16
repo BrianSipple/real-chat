@@ -1,0 +1,34 @@
+{{#page-content class="g-bg-theme-primary-2--700"}}
+
+  {{#form-card
+    class="c-login-page__login-form
+           u-relative
+           u-transform-center
+           g-bg-theme-nearWhite
+           g-box-shadow-2"
+    onsubmit=(route-action 'loginUser')
+  }}
+
+    {{validated-form-field
+      class="u-m2 c-login-page__form-field"
+      model=model
+      valuePath="email"
+      label="Email"
+      fieldType="email"
+      placeholder="youremail@example.com"
+    }}
+
+    {{validated-form-field
+      class="u-m2 c-login-page__form-field"
+      model=model
+      valuePath="password"
+      label="Password"
+      fieldType="password"
+      placeholder="Password"
+    }}
+
+    {{x-button type="submit" class="c-login-page__login-button" title="Login to RealChat"}}
+
+  {{/form-card}}
+
+{{/page-content}}

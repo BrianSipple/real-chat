@@ -1,0 +1,27 @@
+{{#if title}}
+  <header class="c-action-card__header u-fill-width">
+    <h2 class="g-theme-primary-1--500">{{title}}</h2>
+  </header>
+{{/if}}
+
+<div class="c-action-card__body u-fill-width">
+  {{yield}}
+</div>
+
+{{#if attrs.primaryAction}}
+  <footer class="c-action-card__footer u-fill-width">
+    {{#x-button
+      class=(concat
+        "c-action-card__action-button
+        g-bg-theme-primary--500"
+        " "
+        (if isButtonDisabled 'c-button--disabled')
+      )
+      disabled=isButtonDisabled
+      onclick=attrs.primaryAction
+    }}
+      {{buttonText}}
+    {{/x-button}}
+  </footer>
+
+{{/if}}
