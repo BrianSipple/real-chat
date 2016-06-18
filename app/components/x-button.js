@@ -7,7 +7,7 @@ const { Component } = Ember;
 // export default Component.extend(PressActionMixin, {
 export default Component.extend({
 
-  attributeBindings: ['disabled', 'type'],
+  attributeBindings: ['disabled:is-disabled', 'type'],
   tagName: 'button',
   classNameBindings: ['sizeClass'],
 

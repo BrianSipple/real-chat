@@ -6,7 +6,7 @@ module('Unit | Mixin | component/box shadow class');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  let ComponentBoxShadowClassObject = Ember.Object.extend(ComponentBoxShadowClassMixin);
-  let subject = ComponentBoxShadowClassObject.create();
+  const ComponentBoxShadowClassObject = Ember.Object.extend(ComponentBoxShadowClassMixin);
+  const subject = ComponentBoxShadowClassObject.create();
   assert.ok(subject);
 });

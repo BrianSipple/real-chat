@@ -1,5 +1,9 @@
+// module.exports = {
+//   env: {
+//     'embertest': true
+//   }
+// };
+
 module.exports = {
-  env: {
-    'embertest': true
-  }
+  extends: '../config/eslint/eslint-tests.js'
 };

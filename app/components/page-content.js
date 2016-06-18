@@ -10,11 +10,11 @@ export default Component.extend({
   classNameBindings: [
     'fillHeight:u-fill-height',
     'fillWidth:u-fill-width',
-    'isRelative:u-relative',
+    'isRelative:u-relative'
   ],
 
   fillHeight: true,
   fillWidth: true,
-  isRelative: true,
+  isRelative: true
 
 });

@@ -1,13 +1,3 @@
 .c-action-card {
-  /* TODO: PostCSS build */
-  &.c-action-card--md {
-    width: 40rem;
-    height: 23rem;
-  }
-}
 
-/* TODO: PostCSS build */
-.c-action-card.c-action-card--md {
-  width: 40rem;
-  height: 23rem;
 }

@@ -1,1 +1,45 @@
-{{outlet}}
+{{#page-content class="g-bg-theme-primary-2--700 c-register-page"}}
+
+  {{#form-card
+    class="c-register-page__register-form
+           u-relative
+           u-transform-center
+           g-bg-theme-nearWhite"
+    title="Register for RealChat"
+    onSubmit=(route-action 'registerUser')
+    buttonClassNames="u-ml-auto"
+  }}
+
+    {{material-validated-form-field
+      class="u-mr2 u-ml2 u-mt4 u-mb4 c-register-page__form-field"
+      materialInputClassNames="u-fill-width"
+      model=model
+      valuePath="username"
+      fieldType="text"
+      label="Username"
+      placeholder="Enter a username"
+    }}
+
+    {{material-validated-form-field
+      class="u-mr2 u-ml2 u-mt4 u-mb4 c-register-page__form-field"
+      materialInputClassNames="u-fill-width"
+      model=model
+      valuePath="password"
+      fieldType="password"
+      label="Password"
+      placeholder="Enter a password"
+    }}
+
+    {{material-validated-form-field
+      class="u-mr2 u-ml2 u-mt4 u-mb4 c-register-page__form-field"
+      materialInputClassNames="u-fill-width"
+      model=model
+      valuePath="passwordConfirmation"
+      fieldType="password"
+      label="Confirm Password"
+      placeholder="Confirm your password"
+    }}
+
+  {{/form-card}}
+
+{{/page-content}}

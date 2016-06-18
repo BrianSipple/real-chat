@@ -14,14 +14,14 @@ export default XCard.extend({
   sizeClass: computed('size', {
     get() {
       return {
-        'sm': 'c-action-card--sm',
-        'small': 'c-action-card--sm',
-        'md': 'c-action-card--md',
-        'medium': 'c-action-card--md',
-        'lg': 'c-action-card--lg',
-        'large': 'c-action-card--lg',
-        'xlg': 'c-action-card--xlg',
-        'xlarge': 'c-action-card--xlg'
+        sm: 'c-action-card--sm',
+        small: 'c-action-card--sm',
+        md: 'c-action-card--md',
+        medium: 'c-action-card--md',
+        lg: 'c-action-card--lg',
+        large: 'c-action-card--lg',
+        xlg: 'c-action-card--xlg',
+        xlarge: 'c-action-card--xlg'
       }[this.get('size') || 'md'];
     }
   })

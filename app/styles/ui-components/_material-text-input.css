@@ -6,7 +6,7 @@
     top: 0;
     left: 0;
     transform: translate3d(var(--left-offset__label), 50%, 0);
-    transition-property: transform color;
+    transition-property: transform, color;
     transition-duration: var(--anim-duration__shift-element);
     transition-timing-function: var(--easing__ease-out-sine);
   }
@@ -15,21 +15,43 @@
     color: var(--theme-color__nearBlack--700);
     padding: var(--padding__text-input);
     border-color: var(--grayscale__black-on-light--divider);
+    background-color: transparent;
+
+  }
+
+  &__input::placeholder {
+    transition-property: opacity;
+    transition-duration: var(--anim-duration__fade-in-or-out);
+    transition-timing-function: var(--easing__ease-out-sine);
+
+    opacity: 0;
   }
 
 
+
   /* --------------------------- Animating focus/active states ---------- */
-  .c-material-text-input__input:focus + .c-material-text-input__label,
-  .c-material-text-input__input:active + .c-material-text-input__label {
-    transform: translate3d(calc(-1 * var(--left-offset__label)), -100%, 0);
+  &__input:focus + .c-material-text-input__label,
+  &__input:active + .c-material-text-input__label,
+  &.has-input-text .c-material-text-input__label {
+    /*transform: translate3d(0%, -100%, 0%) scale(0.7);*/
+    transform: translate3d(0%, -1em, 0%) scale(0.7);
     transition-timing-function: var(--easing__ease-in-quad);
     color: var(--theme-color__primary-2--500);
   }
 
-  .c-material-text-input__input:focus,
-  .c-material-text-input__input:active {
+  &__input:focus,
+  &__input:active {
     outline: 0;
     border-bottom: 0.2em solid var(--theme-color__primary-2--500);
   }
 
+  &__input:focus::placeholder,
+  &__input:active::placeholder {
+    opacity: 1;
+    transition-timing-function: var(--easing__ease-in-sine);
+  }
+
+  .c-material-text-input__input:active__input:active {
+
+  }
 }

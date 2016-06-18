@@ -1,24 +1,69 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import getNode from 'real-chat/tests/helpers/integration/get-node';
+import bindTestSelectors from 'real-chat/tests/helpers/bind-test-selectors';
+
+const SELECTORS = {
+  title: '[data-test-selector="form-card__title"]',
+  submitButton: '[data-test-selector="form-card__submit-button"]'
+};
+
+
+let actual, expected;
 
 moduleForComponent('form-card', 'Integration | Component | form card', {
-  integration: true
+  integration: true,
+  beforeEach() {
+    bindTestSelectors();
+  }
 });
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+test('Rendering with a title heading and submit button', function(assert) {
 
-  this.render(hbs`{{form-card}}`);
+  const title = 'Presidential Election';
+  const buttonText = 'Vote';
 
-  assert.equal(this.$().text().trim(), '');
+  this.set('title', title);
+  this.set('buttonText', buttonText);
 
-  // Template block usage:
   this.render(hbs`
-    {{#form-card}}
-      template block text
-    {{/form-card}}
+    {{form-card
+      title=title
+      buttonText=buttonText
+      onSubmit=onSubmit
+    }}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  actual = getNode(this)
+    .querySelector(SELECTORS.submitButton)
+    .textContent
+    .trim();
+  expected = buttonText;
+
+  assert.equal(actual, expected);
+
+
+  actual = getNode(this)
+    .querySelector(SELECTORS.title)
+    .textContent
+    .trim();
+
+  expected = title;
+
+  assert.equal(actual, expected);
+});
+
+
+test('Calling its onSubmit action when the submit button is pressed', function(assert) {
+  assert.expect(1);
+
+  this.set('onSubmit', () => {
+    assert.ok(true, 'Submit action fired');
+  });
+
+  this.render(hbs`
+    {{form-card onSubmit=onSubmit}}
+  `);
+
+  getNode(this).querySelector(SELECTORS.submitButton).click();
 });
