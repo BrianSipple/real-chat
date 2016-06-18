@@ -1,3 +1,6 @@
 .c-card {
-  
+  &--md {
+    width: 40rem;
+    height: 23rem;
+  }
 }

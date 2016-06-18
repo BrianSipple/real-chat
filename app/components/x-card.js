@@ -6,7 +6,10 @@ const { Component } = Ember;
 
 export default Component.extend(BoxShadowClassMixin, {
 
-  classNames: ['c-card'],
+  classNames: [
+    'c-card',
+    'o-widget-box'
+  ],
 
   title: null
 });

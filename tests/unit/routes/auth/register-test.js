@@ -6,6 +6,6 @@ moduleFor('route:auth/register', 'Unit | Route | auth/register', {
 });
 
 test('it exists', function(assert) {
-  let route = this.subject();
+  const route = this.subject();
   assert.ok(route);
 });

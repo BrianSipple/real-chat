@@ -1,1 +1,25 @@
-{{yield}}
+<div class="u-relative o-content u-fill-width u-fill-height u-b-box">
+
+  {{#if title}}
+    <header class="c-form-card__header u-fill-width">
+      <h2 class="g-theme-primary-1--500" data-test-selector="form-card__title">{{title}}</h2>
+    </header>
+  {{/if}}
+
+  <section class="c-form-card__body u-fill-width">
+    {{yield}}
+  </section>
+
+  {{#if onSubmit}}
+    <footer class="c-form-card__footer u-fill-width">
+      {{primary-button
+        class=(concat "c-form-card__submit-button" " " buttonClassNames)
+        type="submit"
+        disabled=isButtonDisabled
+        title=buttonText
+        data-test-selector="form-card__submit-button"
+      }}
+    </footer>
+
+  {{/if}}
+</div>
