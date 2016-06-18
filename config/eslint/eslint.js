@@ -11,8 +11,8 @@ module.exports = {
     "./rules/node.js",
     "./rules/strict.js",
     "./rules/style.js",
-    "./rules/variables.js",
-    "./rules/babel-extensions.js"
+    "./rules/variables.js"
+    // "./rules/babel-extensions.js"
   ],
   // plugins: [
   //   "babel"
