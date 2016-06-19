@@ -14,6 +14,8 @@ export default XFormField.extend(ValidatedFormFieldMixin, {
   label: null,
   testSelector: null,
 
+  // errors: null,
+
   for: alias('label'),
 
   inputComponentName: computed('fieldType', {

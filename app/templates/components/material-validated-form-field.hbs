@@ -8,8 +8,8 @@
   errors=errors
 }}
 
-{{#if message}}
+{{#if showMessage}}
   <span class="c-material-validated-form-field__message g-status--error u-block">
-    {{v-get model valuePath message}}
+    {{v-get model valuePath 'message'}}
   </span>
 {{/if}}

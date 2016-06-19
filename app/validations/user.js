@@ -7,9 +7,10 @@ const messages = {
   one lowercase letter, and one uppercase letter`
 };
 
+
 export default buildValidations({
 
-  'model.email': {
+  email: {
     debounce: 650,
     validators: [
       validator('presence', true),
@@ -17,7 +18,7 @@ export default buildValidations({
     ]
   },
 
-  'model.username': {
+  username: {
     debounce: 650,
     validators: [
       validator('presence', true),
@@ -26,7 +27,7 @@ export default buildValidations({
     ]
   },
 
-  'model.password': {
+  password: {
     debounce: 650,
     description: 'Password',
     validators: [
@@ -40,7 +41,7 @@ export default buildValidations({
     ]
   },
 
-  'model.passwordConfirmation': {
+  passwordConfirmation: {
     debounce: 650,
     validators: [
       validator('presence', true),
@@ -49,15 +50,14 @@ export default buildValidations({
         message: messages.passwordPattern
       }),
       validator('confirmation', {
-        // on: 'password',
-        on: 'model.password',
+        on: 'password',
         message: '{description} do not match',
         descriptions: 'Passwords'
       })
     ]
   }
 
-  // 'model.userPrivateInfo': {
+  // userPrivateInfo: {
   //   validators: [
   //     validator('presence', true),
   //     validator('belongs-to')
