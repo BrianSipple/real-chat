@@ -9,7 +9,7 @@ const messages = {
 
 export default buildValidations({
 
-  email: {
+  'model.email': {
     debounce: 650,
     validators: [
       validator('presence', true),
@@ -17,7 +17,7 @@ export default buildValidations({
     ]
   },
 
-  username: {
+  'model.username': {
     debounce: 650,
     validators: [
       validator('presence', true),
@@ -26,7 +26,7 @@ export default buildValidations({
     ]
   },
 
-  password: {
+  'model.password': {
     debounce: 650,
     description: 'Password',
     validators: [
@@ -40,7 +40,7 @@ export default buildValidations({
     ]
   },
 
-  passwordConfirmation: {
+  'model.passwordConfirmation': {
     debounce: 650,
     validators: [
       validator('presence', true),
@@ -57,7 +57,7 @@ export default buildValidations({
     ]
   }
 
-  // userPrivateInfo: {
+  // 'model.userPrivateInfo': {
   //   validators: [
   //     validator('presence', true),
   //     validator('belongs-to')
