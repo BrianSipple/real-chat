@@ -32,7 +32,7 @@ export default buildValidations({
     description: 'Password',
     validators: [
       validator('presence', true),
-      validator('length', { min: 4 }),
+      validator('length', { min: 8 }),
       validator('length', { max: 24 }),
       validator('format', {
         regex: PASSWORD_PATTERN,

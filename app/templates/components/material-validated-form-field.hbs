@@ -5,11 +5,11 @@
   label=label
   type=fieldType
   placeholder=placeholder
-  errors=errors
+  errors=(v-get model valuePath 'messages')
 }}
 
 {{#if showMessage}}
-  <span class="c-material-validated-form-field__message g-status--error u-block">
-    {{v-get model valuePath 'message'}}
+  <span class="c-material-validated-form-field__message g-status--error u-block u-mt1">
+    {{v-get model valuePath 'messages'}}
   </span>
 {{/if}}
