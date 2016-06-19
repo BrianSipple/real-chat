@@ -9,7 +9,7 @@ export default XFormField.extend({
 
   value: null,
   label: null,
-  fieldType: 'text',
+  fieldType: null,
   placeholder: null,
   materialInputClassNames: null,
 

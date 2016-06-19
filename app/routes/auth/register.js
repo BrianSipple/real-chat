@@ -1,13 +1,20 @@
 import Ember from 'ember';
 
-const { Route } = Ember;
+const { Route, inject: { service } } = Ember;
 
 
 export default Route.extend({
+  store: service(),
+
+  model() {
+    return this.get('store').createRecord('user');
+  },
+
 
   actions: {
-    registerUser() {
+    async registerUser(user) {
       console.log('Register user');
+      return user.save();
     }
   }
 });

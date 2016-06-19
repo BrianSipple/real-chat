@@ -1,4 +1,4 @@
-<input
+{{!-- <input
   class={{concat
     inputClassNames
     " "
@@ -9,8 +9,24 @@
   value={{value}}
   placeholder={{placeholder}}
   id={{fieldId}}
-  type="text"
-  onkeyup={{action (mut value) value='target.value'}}>
+  type={{type}}
+  onkeyup={{action (mut value) value='target.value'}}> --}}
+
+{{input
+  class=(concat
+    inputClassNames
+    " "
+    "c-material-text-input__input
+    g-border-none
+    g-border-bottom-s2
+    u-b-box")
+  value=value
+  placeholder=placeholder
+  id=fieldId
+  type=type
+  onkeyup=(action (mut value) value='target.value')
+}}
+
 
 <label
   for={{fieldId}}

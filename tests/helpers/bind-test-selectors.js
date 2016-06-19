@@ -18,7 +18,7 @@ export default () => {
     TextArea,
     Component,
     LinkComponent
-  ].forEach(ViewHelper => {    
+  ].forEach(ViewHelper => {
     ViewHelper.reopen({
       attributeBindings: ['data-test-selector']
     });
