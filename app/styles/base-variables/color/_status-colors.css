@@ -1,7 +1,7 @@
 :root {
 
   --status-text-color__valid: hsla(99, 92%, 24%, 1.00);
-  --status-text-color__invalid: hsla(0, 83%, 57%, 1.00);
+  --status-text-color__invalid: hsla(0, 93%, 47%, 1.00);
 
   --status-background-color__valid: hsla(100, 41%, 64%, 1.00);
   --status-background-color__invalid: hsla(0, 69%, 77%, 1.00);

@@ -12,6 +12,7 @@ const {
 
 
 export default Mixin.create({
+  classNames: ['c-validated-form-field'],
   classNameBindings: ['showErrorClass:has-error', 'isValid'],
 
   model: null,

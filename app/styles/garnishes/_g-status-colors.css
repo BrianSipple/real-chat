@@ -1,0 +1,14 @@
+.g-status--valid {
+  color: var(--status-text-color__valid);
+}
+.g-status--error {
+  color: var(--status-text-color__invalid);
+}
+
+
+.g-bg-status--valid {
+  background-color: var(--status-background-color__valid);
+}
+.g-bg-status--error {
+  background-color: var(--status-background-color__invalid);
+}

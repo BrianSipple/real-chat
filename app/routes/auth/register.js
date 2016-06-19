@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-const { Route, inject: { service } } = Ember;
+const { Route, inject: { service }, Logger: { log } } = Ember;
 
 
 export default Route.extend({
@@ -13,8 +13,10 @@ export default Route.extend({
 
   actions: {
     async registerUser(user) {
-      console.log('Register user');
-      return user.save();
+      log('Registering user: ', user);
+      await user.save();
+
+      this.transitionTo('auth.login');
     }
   }
 });

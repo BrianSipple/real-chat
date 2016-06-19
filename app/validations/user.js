@@ -7,6 +7,7 @@ const messages = {
   one lowercase letter, and one uppercase letter`
 };
 
+
 export default buildValidations({
 
   email: {
@@ -31,7 +32,7 @@ export default buildValidations({
     description: 'Password',
     validators: [
       validator('presence', true),
-      validator('length', { min: 4 }),
+      validator('length', { min: 8 }),
       validator('length', { max: 24 }),
       validator('format', {
         regex: PASSWORD_PATTERN,
@@ -49,8 +50,7 @@ export default buildValidations({
         message: messages.passwordPattern
       }),
       validator('confirmation', {
-        // on: 'password',
-        on: 'model.password',
+        on: 'password',
         message: '{description} do not match',
         descriptions: 'Passwords'
       })
