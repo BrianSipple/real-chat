@@ -5,16 +5,17 @@ const Router = Ember.Router.extend({
   location: config.locationType
 });
 
-/* eslint-disable func-names */
+/* eslint-disable func-names, prefer-arrow-callback */
 
 Router.map(function() {
   this.route('auth', function() {
     this.route('login');
     this.route('register');
   });
+  this.route('app', function() {});
 });
 
-/* eslint-enable func-names */
+/* eslint-enable func-names, prefer-arrow-callback */
 
 
 export default Router;

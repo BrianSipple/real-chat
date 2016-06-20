@@ -6,7 +6,7 @@ const { inject: { service }, isEmpty, isBlank } = Ember;
 const UniqueUsername = BaseValidator.extend({
   store: service(),
 
-  validate(value /* , options, model, attribute*/) {
+  validate(value /* , options, model, attribute */) {
     if (isBlank) {
       return true;
     }
@@ -19,6 +19,7 @@ const UniqueUsername = BaseValidator.extend({
 });
 
 UniqueUsername.reopenClass({
+
   /**
    * Define attribute specific dependent keys for your validator
    *

@@ -1,18 +1,9 @@
-import JSONAPIAdapter from 'ember-data/adapters/json-api';
-import ENV from 'real-chat/config/environment';
-
-const { apis: { realChat: realChatAPI } } = ENV;
+import BaseAdapter from './base';
+import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 
 
-export default JSONAPIAdapter.extend({
-  host: realChatAPI.HOST,
-  namespace: realChatAPI.NAMESPACE,
+export default BaseAdapter.extend(DataAdapterMixin, {
 
-  urlForCreateRecord(modelName /* , snapshot */) {
-    if (modelName === 'user' || modelName === 'users') {
-      return this._super(...arguments).replace('users', 'register');
-    }
+  authorizer: 'authorizer:oauth2',
 
-    return this._super(...arguments);
-  }
 });

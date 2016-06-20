@@ -342,18 +342,64 @@
   fill: var(--theme-color__secondary-1--900) !important;
 }
 
-
-
 /*-------- Secondary Color 2  Utilities --------*/
-.g-theme-accent-2--100 {
+.g-theme-secondary-2--100 {
   color: var(--theme-color__secondary-2--100) !important;
 }
-.g-bg-theme-accent-2--100 {
+.g-theme-secondary-2--300 {
+  color: var(--theme-color__secondary-2--300) !important;
+}
+.g-theme-secondary-2--500 {
+  color: var(--theme-color__secondary-2--500) !important;
+}
+.g-theme-secondary-2--700 {
+  color: var(--theme-color__secondary-2--700) !important;
+}
+.g-theme-secondary-2--900 {
+  color: var(--theme-color__secondary-2--900) !important;
+}
+.g-bg-theme-secondary-2--100 {
   background-color: var(--theme-color__secondary-2--100) !important;
 }
-.g-stroke-theme-accent-2--100 {
+.g-bg-theme-secondary-2--300 {
+  background-color: var(--theme-color__secondary-2--300) !important;
+}
+.g-bg-theme-secondary-2--500 {
+  background-color: var(--theme-color__secondary-2--500) !important;
+}
+.g-bg-theme-secondary-2--700 {
+  background-color: var(--theme-color__secondary-2--700) !important;
+}
+.g-bg-theme-secondary-2--900 {
+  background-color: var(--theme-color__secondary-2--900) !important;
+}
+.g-stroke-theme-secondary-2--100 {
   stroke: var(--theme-color__secondary-2--100) !important;
 }
-.g-fill-theme-accent-2--100 {
+.g-stroke-theme-secondary-2--300 {
+  stroke: var(--theme-color__secondary-2--300) !important;
+}
+.g-stroke-theme-secondary-2--500 {
+  stroke: var(--theme-color__secondary-2--500) !important;
+}
+.g-stroke-theme-secondary-2--700 {
+  stroke: var(--theme-color__secondary-2--700) !important;
+}
+.g-stroke-theme-secondary-2--900 {
+  stroke: var(--theme-color__secondary-2--900) !important;
+}
+.g-fill-theme-secondary-2--100 {
   fill: var(--theme-color__secondary-2--100) !important;
+}
+.g-fill-theme-secondary-2--300 {
+  fill: var(--theme-color__secondary-2--300) !important;
+}
+.g-fill-theme-secondary-2--500 {
+  fill: var(--theme-color__secondary-2--500) !important;
+}
+.g-fill-theme-secondary-2--700 {
+  fill: var(--theme-color__secondary-2--700) !important;
+}
+.g-fill-theme-secondary-2--900 {
+  fill: var(--theme-color__secondary-2--900) !important;
 }

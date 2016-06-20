@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import UserValidations from 'real-chat/validations/user';
 
-const { Route, Object: EmberObject, getOwner } = Ember;
+const { Route, Object: EmberObject, getOwner, inject: { service } } = Ember;
 
 const User = EmberObject.extend(UserValidations, {
   email: null,
@@ -9,14 +9,36 @@ const User = EmberObject.extend(UserValidations, {
 });
 
 export default Route.extend({
+  SessionService: service('session'),
 
   model () {
     return User.create(getOwner(this).ownerInjection());  // inject owner to accomadate container access needs of validations: https://github.com/offirgolan/ember-cp-validations#basic-usage---objects
   },
 
   actions: {
-    loginUser () {
-      console.log('Login');
+    async loginUser (userModel) {
+      // const user = this.get('currentModel');
+      debugger;
+      const credentials = {
+        identification: userModel.get('email'),
+        password: userModel.get('password')
+      };
+
+      try {
+        const currentUser = await this
+          .get('SessionService')
+          .authenticate('authenticator:oauth2', credentials);
+
+        debugger;
+        this.get('SessionService').set('currentUser', currentUser);
+
+      } catch (e) {
+        debugger;
+        throw new Error(e);
+      }
+
+
+
     }
   }
 });
