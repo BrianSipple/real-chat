@@ -1,0 +1,16 @@
+{{#page-content class="p-chat-main g-bg-theme-primary-2--100"}}
+
+  <h2 class="u-align-center u-mt4 u-mb5">Main Chat</h2>
+
+  {{#x-card
+    buttonText="Logout"
+    onSubmit=(route-action 'logout')
+    title="Welcome to ze Chat!"
+  }}
+    {{#user-info as |userInfo|}}
+      Thank you for logging in, {{userInfo.email}}
+    {{/user-info}}
+  {{/x-card}}
+
+
+{{/page-content}}

@@ -37,6 +37,12 @@ module.exports = function(environment) {
     componentOptions: {}
   };
 
+  ENV['ember-simple-auth'] = {
+    authenticationRoute: 'auth.login',
+    routeIfAlreadyAuthenticated: 'app.index',
+    routeAfterAuthentication: 'app.index'
+  };
+
 
   ////////////// ENVIRONMENT-SPECIFIC SETTINGS TO OVERRIDE defaults ///////////////////
   if (environment === 'development') {
