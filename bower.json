@@ -6,6 +6,6 @@
     "ember-cli-test-loader": "0.2.2",
     "ember-qunit-notifications": "0.1.0",
     "node-uuid": "1.4.7",
-    "axe-core": "1.1.1"
+    "axe-core": "^1.1.1"
   }
 }

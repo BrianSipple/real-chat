@@ -6,14 +6,14 @@ const { apis: { realChat: realChatAPI } } = ENV;
 
 export default OAuth2PasswordGrantAuthenticator.extend({
 
-  serverTokenEndpiont: `${realChatAPI.HOST}/${realChatAPI.NAMESPACE}/token`,
+  serverTokenEndpoint: `${realChatAPI.HOST}/${realChatAPI.NAMESPACE}/token`,
 
-  restore(/* data */) {
-  },
-
-  authenticate(/* args */) {
-  },
-
-  invalidate(/* data */) {
-  }
+  // restore(/* data */) {
+  // },
+  //
+  // authenticate(/* args */) {
+  // },
+  //
+  // invalidate(/* data */) {
+  // }
 });

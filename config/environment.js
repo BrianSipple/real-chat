@@ -30,7 +30,20 @@ module.exports = function(environment) {
       }
     },
 
-    SERVER_PORT
+    SERVER_PORT,
+
+    flashMessageDefaults: {
+      /**
+       * How long is the flash message visible (i.e: "active")?
+       */
+      timeout: 5000,
+
+      /**
+       * After animating the exit, how long do we delay before removing the
+       * element from the DOM entirely?
+       */
+      extendedTimeout: 375,
+    }
   };
 
   ENV['ember-a11y-testing'] = {

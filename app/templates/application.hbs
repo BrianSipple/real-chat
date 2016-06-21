@@ -1,3 +1,21 @@
-{{#page-wrapper tagName="main"}}
+{{#page-wrapper tagName="main" class=(concat "c-application" " " media.classNames)}}
   {{outlet}}
+  {{#flash-messages
+    class="c-application__flash-messages
+           u-fixed
+           u-block
+           u-z1
+           u-edge-left
+           u-edge-bottom
+           u-fill-width"
+  }}
+
+{{!--
+    {{flash-message class="c-flash-messages__flash-message" content=(hash message="Test Flash" type="info")}}
+    {{flash-message class="c-flash-messages__flash-message" content=(hash message="Test Flash" type="danger")}}
+    {{flash-message class="c-flash-messages__flash-message" content=(hash message="Test Flash" type="success")}}
+    {{flash-message class="c-flash-messages__flash-message" content=(hash message="Test Flash" type="warning")}}
+--}}
+
+  {{/flash-messages}}
 {{/page-wrapper}}

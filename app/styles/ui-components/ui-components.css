@@ -5,6 +5,8 @@
 @import './_action-card.css';
 @import './_button.css';
 @import './_card.css';
+@import './_flash-message.css';
+@import './_flash-messages.css';
 @import './_form-field.css';
 @import './_material-text-input.css';
 @import './_material-validated-form-field.css';

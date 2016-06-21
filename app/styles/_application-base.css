@@ -6,3 +6,35 @@
 @import './pages/pages.css';
 @import './ui-components/ui-components.css';
 /*@import './utilities/utilities.css';*/
+
+
+
+.c-application {
+
+  /* -------------- Media Queries -------------- */
+  &.media-mobile {
+    .c-application__flash-messages {
+      bottom: 5%;
+      left: 7%;
+      max-width: 90%;
+    }
+  }
+
+  &.media-desktop {
+    .c-application__flash-messages {
+      /* Large and up */
+      top: 10%;
+      right: 7%;
+      max-width: 86%;
+    }
+  }
+
+  &.media-monitor {
+    .c-application__flash-messages {
+      top: 10%;
+      right: 7%;
+      max-width: 66%;
+    }
+  }
+
+}
