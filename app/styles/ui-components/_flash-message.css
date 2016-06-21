@@ -1,7 +1,7 @@
 .c-flash-message {
 
   border-left: 0.85em solid;
-
+  
   &--danger {
     border-left-color: var(--alert-color__danger--700);
     background-color: var(--alert-color__danger--300);

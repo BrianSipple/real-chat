@@ -11,12 +11,17 @@ const {
 
 
 export default Component.extend(BoxShadowClassMixin, {
-  classNames: [ 'c-flash-message', 'o-content'],
+  classNames: ['c-flash-message', 'o-content'],
   classNameBindings: ['isActive', 'isExiting', 'colorClassName'],
 
   content: null,
   isActive: false,
   shadowDepth: 3,
+
+
+  exit () {
+    this.set('content.exiting', true);
+  },
 
 
   isExiting: readOnly('content.exiting'),
@@ -61,7 +66,7 @@ export default Component.extend(BoxShadowClassMixin, {
   _destroyFlashMessage() {
     const flashMessage = getWithDefault(this, 'content', false);
 
-    if (flashMessage) {
+    if (flashMessage && typeof flashMessage.destroyMessage === 'function') {
       flashMessage.destroyMessage();
     }
   }

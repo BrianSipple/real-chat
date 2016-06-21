@@ -5,7 +5,7 @@ const { Component, inject: { service }, computed } = Ember;
 
 export default Component.extend({
   flashMessages: service(),
-  classNames: ['c-flash-messages'],
+  classNames: ['c-flash-messages', 'u-b-box'],
 
 
   /**
