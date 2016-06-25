@@ -54,7 +54,6 @@
     "ember-simple-auth": "git://github.com/simplabs/ember-simple-auth.git#9124f5528a120f6a0a04a6d01be8b9bf0d869323",
     "ember-simple-uuid": "0.1.4",
     "ember-test-selectors": "0.0.3",
-    "ember-welcome-page": "^1.0.1",
     "loader.js": "^4.0.1",
     "postcss-calc": "5.2.1",
     "postcss-css-variables": "0.5.1",
