@@ -1,0 +1,19 @@
+/**
+ * TODO: Consider finding a more abstract "list item" or
+ * "collection list item" pattern with some of what's here
+ */
+
+.media-small-handset {
+  .c-room-list-item {
+    min-width: 100vw;
+    width: 100vw;
+  }
+}
+
+.c-room-list-item {
+  min-width: 30rem;
+
+  &__thumb {
+
+  }
+}

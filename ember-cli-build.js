@@ -69,7 +69,9 @@ module.exports = function(defaults) {
     minifyJS: { enabled: isProductionLikeBuild },
 
     svgstore: {
-      excludeSourceFiles: true, // exclude all processed source files to prevent duplication when Ember-CLI-broccoli sends stuff in public to /dist (https://github.com/salsify/ember-cli-svgstore#usage)
+      // exclude all processed source files to prevent duplication
+      // when Ember-CLI-broccoli sends stuff in public to /dist (https://github.com/salsify/ember-cli-svgstore#usage)
+      excludeSourceFiles: true,
       files: {
         sourceDirs: [ 'public/assets/icons' ],
         outputFile: '/assets/icons.svg'
