@@ -6,7 +6,7 @@ module('Unit | Mixin | component/modal dialog');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  let ComponentModalDialogObject = Ember.Object.extend(ComponentModalDialogMixin);
-  let subject = ComponentModalDialogObject.create();
+  const ComponentModalDialogObject = Ember.Object.extend(ComponentModalDialogMixin);
+  const subject = ComponentModalDialogObject.create();
   assert.ok(subject);
 });

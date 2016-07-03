@@ -5,7 +5,7 @@
     target="body"
     targetAttachment="middle center"
   }}
-    {{icon-button
+    {{buttons/icon-button
       class="u-absolute
              u-edge-right
              u-edge-top
@@ -20,18 +20,18 @@
     {{yield}}
 
     <footer class="o-flex-grid u-mt3">
-      {{x-button
+      {{buttons/action-button
         class="o-grid-cell o-grid-cell--flex-none u-ml-auto u-mr2 g-bg-theme-primary-1--500"
-        title="Yes"
+        title=confirmTitle
         onPressed=onConfirm
       }}
 
-      {{x-button
+      {{buttons/action-button
         class="o-grid-cell o-grid-cell--flex-none g-bg-theme-primary-1--500"
-        title="No"
+        title=abortTitle
         onPressed=onAbort
       }}
     </footer>
   {{/modals/base-overlay}}
-  
+
 {{/if}}

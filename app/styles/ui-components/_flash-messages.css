@@ -1,5 +1,7 @@
 .c-flash-messages {
 
+  pointer-events: none;
+
   &__flash-message {
     opacity: 0;
     transform: translateY(100%);

@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('primary-button', 'Integration | Component | primary button', {
+moduleForComponent('buttons/action-button', 'Integration | Component | buttons/action button', {
   integration: true
 });
 
@@ -9,15 +9,15 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{primary-button}}`);
+  this.render(hbs`{{buttons/action-button}}`);
 
   assert.equal(this.$().text().trim(), '');
 
   // Template block usage:
   this.render(hbs`
-    {{#primary-button}}
+    {{#buttons/action-button}}
       template block text
-    {{/primary-button}}
+    {{/buttons/action-button}}
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');

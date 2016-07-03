@@ -34,20 +34,12 @@ test('Rendering with a title heading and submit button', function(assert) {
     }}
   `);
 
-  actual = getNode(this)
-    .querySelector(SELECTORS.submitButton)
-    .textContent
-    .trim();
+  const formCardElem = getNode(this);
+  actual = formCardElem.querySelector(SELECTORS.submitButton).textContent.trim();
   expected = buttonText;
 
   assert.equal(actual, expected);
-
-
-  actual = getNode(this)
-    .querySelector(SELECTORS.title)
-    .textContent
-    .trim();
-
+  actual = formCardElem.querySelector(SELECTORS.title).textContent.trim();
   expected = title;
 
   assert.equal(actual, expected);

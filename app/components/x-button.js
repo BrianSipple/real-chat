@@ -1,21 +1,18 @@
 import Ember from 'ember';
-import PressActionMixin from 'real-chat/mixins/component/press-action';
 
 const { Component, computed } = Ember;
 
 
-export default Component.extend(PressActionMixin, {
-// export default Component.extend({
-  attributeBindings: ['disabled:is-disabled', 'type'],
+export default Component.extend({
+  attributeBindings: ['disabled', 'type', 'data-test-selector'],
   tagName: 'button',
-  classNameBindings: ['cornerStyleClass'],
+  classNameBindings: ['cornerStyleClass', 'disabled::u-pointer'],
 
   classNames: [
     'c-button',
     'o-flex-grid',
     'o-flex-grid--full',
     'o-flex-grid--center',
-    'u-pointer',
     'u-relative'
   ],
 
@@ -27,12 +24,9 @@ export default Component.extend(PressActionMixin, {
   cornerStyleClass: computed('cornerStyle', {
     get() {
       return {
-        'rounded': 'c-button--rounded',
-        'flat': 'c-button--flat'
+        rounded: 'c-button--rounded',
+        flat: 'c-button--flat'
       }[(this.get('cornerStyle') || '').toLowerCase()];
-
     }
   })
-
-
 });

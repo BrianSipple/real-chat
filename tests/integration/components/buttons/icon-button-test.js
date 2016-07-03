@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('modals/confirmation-overlay', 'Integration | Component | modals/confirm overlay', {
+moduleForComponent('buttons/icon-button', 'Integration | Component | icon button', {
   integration: true
 });
 
@@ -9,15 +9,15 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{modals/confirmation-overlay}}`);
+  this.render(hbs`{{buttons/icon-button}}`);
 
   assert.equal(this.$().text().trim(), '');
 
   // Template block usage:
   this.render(hbs`
-    {{#modals/confirmation-overlay}}
+    {{#buttons/icon-button}}
       template block text
-    {{/modals/confirmation-overlay}}
+    {{/buttons/icon-button}}
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');

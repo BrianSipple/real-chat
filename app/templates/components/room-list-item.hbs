@@ -17,7 +17,7 @@
             o-flex-grid--center
             o-flex-grid--justifyCenter">
 
-  {{icon-button
+  {{buttons/icon-button
     class="c-room-list-item__open-icon
                        o-grid-cell
                        u-m2
@@ -29,20 +29,13 @@
 
 </div>
 
-{{!--
 <div class="o-collection-item__content
             o-grid-cell
             o-grid-cell--grow-one
-            o-flex-grid
-            o-flex-grid--center
-            o-flex-grid--justifyCenter">
-  <h3 class="o-grid-cell u-align-center">{{room.name}}</h3>
-</div> --}}
-<div class="o-collection-item__content
-            o-grid-cell
-            o-grid-cell--grow-one">
+            u-ml2
+            u-mr2">
   <p>{{room.name}}</p>
-  <p class="g-grayscale-bl--secondary-text">Owner: {{room.owner.email}}</p>
+  <p class="g-grayscale-bl--secondary-text u-mt2">Owner: {{room.owner.email}}</p>
 </div>
 
 <div class="o-collection-item__options
@@ -52,7 +45,7 @@
             o-flex-grid--center
             o-flex-grid--justifyCenter">
 
-  {{icon-button
+  {{buttons/icon-button
     class="o-collection-item__options
            o-grid-cell
            g-bg-red--500

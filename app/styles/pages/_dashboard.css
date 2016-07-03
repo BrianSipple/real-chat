@@ -1,3 +1,17 @@
 .p-dashboard {
-  
+
+  &__new-room-form {
+    overflow: visible;
+  }
+
+  &__room-list-container {
+    min-width: 30rem;
+  }
+}
+
+.media-tablet {
+  .p-dashboard__room-list-container {
+    min-width: 100%;
+    width: 100%;
+  }
 }

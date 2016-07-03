@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-const { Mixin, K } = Ember;
+const { Mixin } = Ember;
 
 
 export default Mixin.create({

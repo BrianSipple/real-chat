@@ -75,7 +75,8 @@ module.exports = function(defaults) {
       files: {
         sourceDirs: [ 'public/assets/icons' ],
         outputFile: '/assets/icons.svg'
-      }
+      },
+      extraSymbolAttrs: ['aria-labelledby', 'role', 'foo', 'bar']
     }
   });
 

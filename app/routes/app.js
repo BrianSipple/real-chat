@@ -28,7 +28,6 @@ export default Route.extend({
     })
     .then(resp => resp.json());
 
-    debugger;
     const currentUser = this.store.push(currentUserData);
     this.set('SessionService.currentUser', currentUser);
 

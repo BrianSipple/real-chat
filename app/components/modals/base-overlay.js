@@ -4,7 +4,7 @@ import BoxShadowClassMixin from 'real-chat/mixins/component/box-shadow-class';
 import BodyEscapePressListener from 'real-chat/mixins/body-event-listeners/escape-press';
 import ModalDialog from 'ember-modal-dialog/components/modal-dialog';
 
-const { Component, K } = Ember;
+const { K } = Ember;
 
 
 export default ModalDialog.extend(ModalDialogMixin, BodyEscapePressListener, BoxShadowClassMixin, {

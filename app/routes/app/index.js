@@ -20,22 +20,21 @@ export default Route.extend({
 
   actions: {
     async createRoom() {
+      // Get the "new room" model
       const roomData = this.get('currentModel.newRoom');
-      const newRoomModel = this.store.createRecord('room', roomData);
-
+      // Create a new Ember-Data record
+      const newRoomModel = this.store.createRecord('room', { name: roomData.name });
       // Clear any existing room messages
       this.set('currentModel.newRoom.errors', []);
 
       try {
         const createdRoom = await newRoomModel.save();
-
         // Notify success!
         this.get('flashMessages').success(`Created room: ${createdRoom.get('name')}`);
         this.set('currentModel.newRoom.name', '');  // clear the input
 
       } catch (err) {
         // Handle server-side errors
-
         // Remove the ember-data record from the Store
         this.store.unloadRecord(newRoomModel);
 
@@ -51,16 +50,13 @@ export default Route.extend({
      * Delete a room
      */
     removeRoom(room) {
-      // if (window.confirm('Are you sure you want to permanantly delete this room?')) {
-        // Old school confirmation prompt. TODO: Use ember-modal-dialog
-        room.destroyRecord()
-          .then(() => {
-            this.get('flashMessages').success(`Deleted room: ${room.get('name')}`);
-          })
-          .catch(() => {
-            this.get('flashMessages').danger(`There was a problem with deleting the room: "${room.name}"`);
-          });
-      // }
+      room.destroyRecord()
+        .then(() => {
+          this.get('flashMessages').success(`Deleted room: ${room.get('name')}`);
+        })
+        .catch(() => {
+          this.get('flashMessages').danger(`There was a problem with deleting the room: "${room.name}"`);
+        });
     }
   }
 });

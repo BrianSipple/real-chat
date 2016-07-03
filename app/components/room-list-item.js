@@ -27,7 +27,7 @@ export default XListItem.extend({
   actions: {
     onRemoveRoom() {
       debugger;
-      return this.get('removeRoom')(this.get('room'));
+      return this.get('removeRoom')();
     }
   }
 });
