@@ -1,13 +1,18 @@
 {{#page-wrapper tagName="main" class=(concat "c-application u-z0" " " media.classNames)}}
-  {{x-sidenav
-    class="c-application__sidenav
-           u-fill-height
-           u-absolute
-           u-edge-top
-           u-edge-left
-           u-z1
-           g-bg-theme-primary-2--500"
-  }}
+
+  {{#x-navbar class="g-bg-theme-primary-1--500 u-z1" title="RealChat" as |navbar|}}
+    <ul class="g-list-reset o-grid-cell o-grid-cell--flex-none u-ml-auto o-flex-grid o-flex-grid--center">
+      {{#each navbar.navLinks as |link|}}
+
+        <li class="o-grid-cell">
+          {{#navbar.navLink link.routeName class="g-link-reset u-mr2"}}
+            {{link.title}}
+          {{/navbar.navLink}}
+        </li>
+
+      {{/each}}
+    </ul>
+  {{/x-navbar}}
 
   {{outlet}}
 

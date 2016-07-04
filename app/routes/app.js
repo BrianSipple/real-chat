@@ -8,11 +8,23 @@ const { apis: { realChat: realChatAPI } } = ENV;
 
 export default Route.extend({
   SessionService: service('session'),
+  NavbarService: service('navbar'),
+
+
+  activate() {
+    const NavbarService = this.get('NavbarService');
+
+    NavbarService.removeNavLink('auth.login');
+    NavbarService.removeNavLink('auth.register');
+    NavbarService.addNavLink('auth.logout', 'Logout');
+  },
 
   beforeModel() {
     if (!this.get('SessionService').get('isAuthenticated')) {
       this.transitionTo(AuthConfig.authenticationRoute);
     }
+
+    this.get('NavbarService').set('isNavbarVisible', true);
   },
 
   async afterModel () {

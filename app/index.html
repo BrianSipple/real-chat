@@ -9,16 +9,16 @@
 
     {{content-for "head"}}
 
-    <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/real-chat.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/real-chat.css">
 
     {{content-for "head-footer"}}
   </head>
   <body class="u-relative u-full-stretch u-full-bleed">
     {{content-for "body"}}
 
-    <script src="assets/vendor.js"></script>
-    <script src="assets/real-chat.js"></script>
+    <script src="{{rootURL}}assets/vendor.js"></script>
+    <script src="{{rootURL}}assets/real-chat.js"></script>
 
     {{content-for "body-footer"}}
   </body>

@@ -1,24 +1,23 @@
-import { moduleForComponent /* , test */} from 'ember-qunit';
-import { skip } from 'qunit';
+import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('x-sidenav', 'Integration | Component | x sidenav', {
+moduleForComponent('nav-link', 'Integration | Component | nav link', {
   integration: true
 });
 
-skip('it renders', function(assert) {
+test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{x-sidenav}}`);
+  this.render(hbs`{{nav-link}}`);
 
   assert.equal(this.$().text().trim(), '');
 
   // Template block usage:
   this.render(hbs`
-    {{#x-sidenav}}
+    {{#nav-link}}
       template block text
-    {{/x-sidenav}}
+    {{/nav-link}}
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');
