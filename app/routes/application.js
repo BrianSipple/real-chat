@@ -12,8 +12,8 @@ export default Route.extend(ApplicationRouteMixin, {
   activate() {
     const NavbarService = this.get('NavbarService');
 
-    NavbarService.addNavLink('auth.login', 'Login');
     NavbarService.addNavLink('auth.register', 'Register');
+    NavbarService.addNavLink('auth.login', 'Login');
   },
 
 

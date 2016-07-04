@@ -4,8 +4,8 @@
     <ul class="g-list-reset o-grid-cell o-grid-cell--flex-none u-ml-auto o-flex-grid o-flex-grid--center">
       {{#each navbar.navLinks as |link|}}
 
-        <li class="o-grid-cell">
-          {{#navbar.navLink link.routeName class="g-link-reset u-mr2"}}
+        <li class="o-grid-cell u-mr2">
+          {{#navbar.navLink link.routeName class="g-link-reset"}}
             {{link.title}}
           {{/navbar.navLink}}
         </li>
@@ -14,7 +14,7 @@
     </ul>
   {{/x-navbar}}
 
-  {{outlet}}
+  {{liquid-outlet class="u-fill-height lf-child-container--full-child"}}
 
   {{flash-messages
     class="c-application__flash-messages
