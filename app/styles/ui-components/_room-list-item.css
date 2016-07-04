@@ -1,0 +1,15 @@
+/**
+ * TODO: Consider finding a more abstract "list item" or
+ * "collection list item" pattern with some of what's here
+ */
+.c-room-list-item {
+  height: auto;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--grayscale__black-on-light--divider);
+  }
+
+  &__thumb {
+
+  }
+}

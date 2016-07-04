@@ -6,10 +6,13 @@ const { Route, inject: { service } } = Ember;
 
 export default Route.extend({
   SessionService: service('session'),
+  NavbarService: service('navbar'),
 
-  beforeModel() {
-    if (this.get('SessionService').get('isAuthenticated')) {
+  beforeModel({ intent: { name: destination } }) {
+    if (this.get('SessionService').get('isAuthenticated') && destination !== 'auth.logout') {
       this.transitionTo(AuthConfig.routeIfAlreadyAuthenticated);
     }
+
+    this.get('NavbarService').set('isNavbarVisible', true);
   }
 });

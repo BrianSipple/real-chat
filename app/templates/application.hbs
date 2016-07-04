@@ -1,6 +1,22 @@
-{{#page-wrapper tagName="main" class=(concat "c-application" " " media.classNames)}}
+{{#page-wrapper tagName="main" class=(concat "c-application u-z0" " " media.classNames)}}
+
+  {{#x-navbar class="g-bg-theme-primary-1--500 u-z1" title="RealChat" as |navbar|}}
+    <ul class="g-list-reset o-grid-cell o-grid-cell--flex-none u-ml-auto o-flex-grid o-flex-grid--center">
+      {{#each navbar.navLinks as |link|}}
+
+        <li class="o-grid-cell">
+          {{#navbar.navLink link.routeName class="g-link-reset u-mr2"}}
+            {{link.title}}
+          {{/navbar.navLink}}
+        </li>
+
+      {{/each}}
+    </ul>
+  {{/x-navbar}}
+
   {{outlet}}
-  {{#flash-messages
+
+  {{flash-messages
     class="c-application__flash-messages
            u-fixed
            u-block
@@ -9,13 +25,4 @@
            u-edge-bottom
            u-fill-width"
   }}
-
-{{!--
-    {{flash-message class="c-flash-messages__flash-message" content=(hash message="Test Flash" type="info")}}
-    {{flash-message class="c-flash-messages__flash-message" content=(hash message="Test Flash" type="danger")}}
-    {{flash-message class="c-flash-messages__flash-message" content=(hash message="Test Flash" type="success")}}
-    {{flash-message class="c-flash-messages__flash-message" content=(hash message="Test Flash" type="warning")}}
---}}
-
-  {{/flash-messages}}
 {{/page-wrapper}}

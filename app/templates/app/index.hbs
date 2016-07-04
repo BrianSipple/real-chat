@@ -1,16 +1,51 @@
-{{#page-content class="p-chat-main g-bg-theme-primary-2--100"}}
+{{#page-content class="p-dashboard g-bg-theme-primary-2--100"}}
 
-  <h2 class="u-align-center u-mt4 u-mb5">Main Chat</h2>
+  <h2 class="u-align-center u-mt4 u-mb5">Welcome to RealChat, {{SessionService.data.authenticated.user.email}}</h2>
 
-  {{#x-card
-    buttonText="Logout"
-    onSubmit=(route-action 'logout')
-    title="Welcome to ze Chat!"
-  }}
-    {{#user-info as |userInfo|}}
-      Thank you for logging in, {{userInfo.email}}
-    {{/user-info}}
-  {{/x-card}}
+  <h3>Rooms</h3>
 
+  <section class="g-bg-nearWhite g-box-shadow-2 p-dashboard__room-list-container">
 
+    <ul class="p-dashboard__room-list o-collection-list g-list-reset">
+
+      {{#each model.rooms as |room|}}
+        {{room-list-item
+          class="p-dashboard__room-list-item
+                 o-collection-item
+                 g-bg-nearWhite"
+          room=room
+          removeRoom=(route-action 'removeRoom' room)
+        }}
+      {{else}}
+        No Rooms Created Yet
+      {{/each}}
+
+    </ul>
+
+    {{#x-form
+      class="p-dashboard__new-room-form
+             u-width-60
+             o-content
+             o-flex-grid
+             o-flex-grid--auto
+             o-flex-grid--noWrap
+             u-ml-auto
+             u-mr-auto
+             u-mt3"
+      onSubmit=(route-action 'createRoom')
+    }}
+      {{material-text-input
+        class="o-grid-cell u-pr2 u-width-75"
+        label="Room Name"
+        value=model.newRoom.name
+        placeholder="Enter a Room Name"
+      }}
+
+      {{buttons/primary-button
+        class="p-dashboard__create-room-button o-grid-cell u-width-25"
+        type="submit"
+        title="CREATE"
+      }}
+    {{/x-form}}
+  </section>
 {{/page-content}}

@@ -6,6 +6,16 @@ const { Route, inject: { service } } = Ember;
 
 export default Route.extend(ApplicationRouteMixin, {
   flashMessages: service(),
+  NavbarService: service('navbar'),
+
+
+  activate() {
+    const NavbarService = this.get('NavbarService');
+
+    NavbarService.addNavLink('auth.login', 'Login');
+    NavbarService.addNavLink('auth.register', 'Register');
+  },
+
 
   actions: {
 
@@ -13,7 +23,7 @@ export default Route.extend(ApplicationRouteMixin, {
      * Call `invalidate` on the `session` service injected
      * by the ApplicationRouteMixin
      */
-    logout () {
+    invalidateSession() {
       this.get('session').invalidate();
       this.get('flashMessages').success('Logged out');
     }

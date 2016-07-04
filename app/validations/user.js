@@ -43,15 +43,12 @@ export default buildValidations({
 
   passwordConfirmation: {
     debounce: 650,
+    description: 'Comfirmation password',
     validators: [
       validator('presence', true),
-      validator('format', {
-        regex: PASSWORD_PATTERN,
-        message: messages.passwordPattern
-      }),
       validator('confirmation', {
         on: 'password',
-        message: '{description} do not match',
+        message: '{description} does not match',
         descriptions: 'Passwords'
       })
     ]

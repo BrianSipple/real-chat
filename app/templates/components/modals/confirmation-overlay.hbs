@@ -1,0 +1,37 @@
+{{#if isShowingModal}}
+
+  {{#modals/base-overlay
+    container-class="c-confirmation-overlay-modal"
+    target="body"
+    targetAttachment="middle center"
+  }}
+    {{buttons/icon-button
+      class="u-absolute
+             u-edge-right
+             u-edge-top
+             u-mt1
+             u-mr1"
+     iconURL="assets/icons.svg#icon_x"
+     stroke="red"
+     onPressed=(action (toggle 'isShowingModal' this))
+    }}
+    {{message}}
+
+    {{yield}}
+
+    <footer class="o-flex-grid u-mt3">
+      {{buttons/action-button
+        class="o-grid-cell o-grid-cell--flex-none u-ml-auto u-mr2 g-bg-theme-primary-1--500"
+        title=confirmTitle
+        onPressed=onConfirm
+      }}
+
+      {{buttons/action-button
+        class="o-grid-cell o-grid-cell--flex-none g-bg-theme-primary-1--500"
+        title=abortTitle
+        onPressed=onAbort
+      }}
+    </footer>
+  {{/modals/base-overlay}}
+
+{{/if}}

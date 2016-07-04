@@ -7,8 +7,9 @@ const THRESHOLDS = {
 };
 
 export default {
-  smallHandset: `(max-width: ${THRESHOLDS.tablet - 1}px)`,
-  mobile: `(min-width: ${THRESHOLDS.tablet}px) and (max-width: ${THRESHOLDS.desktop - 1}px)`,
+  phone: `(max-width: ${THRESHOLDS.phone - 1}px)`,
+  tablet: `(max-width: ${THRESHOLDS.tablet - 1}px)`,
+  mobile: `(max-width: ${THRESHOLDS.desktop - 1}px)`,
   atLeastTablet: `(min-width: ${THRESHOLDS.tablet}px)`,
   greaterThanMobile: `(min-width: ${THRESHOLDS.desktop}px)`,
   desktop: `(min-width: ${THRESHOLDS.desktop}px) and (max-width: ${THRESHOLDS.largeDesktop - 1}px)`,

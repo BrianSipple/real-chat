@@ -6,12 +6,14 @@ const {
   Object: EmberObject,
   getOwner,
   inject: { service },
-  get
+  get,
+  computed: { and }
 } = Ember;
 
 const User = EmberObject.extend(UserValidations, {
   email: null,
-  password: null
+  password: null,
+  isFormValid: and('validations.attrs.{email,password}.isValid')
 });
 
 
@@ -25,16 +27,12 @@ export default Route.extend({
 
   actions: {
     async loginUser (userModel) {
-      // const user = this.get('currentModel');
-      const credentials = {
-        identification: userModel.get('email'),
-        password: userModel.get('password')
-      };
+      const { email: identification, password } = userModel.getProperties('email', 'password');
 
       try {
         const currentUser = await this
           .get('SessionService')
-          .authenticate('authenticator:oauth2', credentials);  // TODO: Properly format credentials object?
+          .authenticate('authenticator:oauth2', identification, password);
 
         this.get('flashMessages').success('Successfully logged in');
         this.get('SessionService').set('currentUser', currentUser);
@@ -52,7 +50,6 @@ export default Route.extend({
           this
             .get('flashMessages')
             .danger('A server error has occurred. Please try again.');
-          // throw new Error(e);
         }
       }
     }

@@ -1,0 +1,59 @@
+
+{{!-- TODO: Make custom "action-button modal"? --}}
+{{modals/confirmation-overlay
+  isShowingModal=isShowingDeleteConfirmation
+  message="Are you sure you want to permanantly delete this room?"
+  confirmTitle="Yes"
+  abortTitle="Nevermind"
+  onConfirm=(action (pipe (action 'onRemoveRoom') (toggle 'isShowingDeleteConfirmation' this)))
+  onAbort=(action (toggle 'isShowingDeleteConfirmation' this))
+}}
+
+<div class="o-collection-item__thumb
+            c-room-list-item__thumb
+            o-grid-cell
+            o-grid-cell--grow-none
+            o-flex-grid
+            o-flex-grid--center
+            o-flex-grid--justifyCenter">
+
+  {{buttons/icon-button
+    class="c-room-list-item__open-icon
+                       o-grid-cell
+                       u-m2
+                       g-nearWhite
+                       g-bg-theme-primary-1--500"
+    fab=true
+    iconURL="assets/icons.svg#icon_video-chat--dotted"
+  }}
+
+</div>
+
+<div class="o-collection-item__content
+            o-grid-cell
+            o-grid-cell--grow-one
+            u-ml2
+            u-mr2">
+  <p>{{room.name}}</p>
+  <p class="g-grayscale-bl--secondary-text u-mt2">Owner: {{room.owner.email}}</p>
+</div>
+
+<div class="o-collection-item__options
+            o-grid-cell
+            o-grid-cell--grow-none
+            o-flex-grid
+            o-flex-grid--center
+            o-flex-grid--justifyCenter">
+
+  {{buttons/icon-button
+    class="o-collection-item__options
+           o-grid-cell
+           g-bg-red--500
+           g-nearWhite u-m2"
+    fab=true
+    iconURL="assets/icons.svg#icon_minus"
+    onPressed=(action (toggle 'isShowingDeleteConfirmation' this))
+  }}
+</div>
+
+{{yield}}

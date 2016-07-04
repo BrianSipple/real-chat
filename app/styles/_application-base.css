@@ -11,12 +11,28 @@
 
 .c-application {
 
+  &__sidenav {
+    width: 20rem;
+    transition-property: transform;
+    transition-duration: var(--anim-duration__slide-element);
+    transition-timing-function: var(--easing__ease-out-cubic);
+  }
+
+  &__sidenav.is-visible {
+    transform: translate3d(0, 0, 0);
+    transition-timing-function: var(--easing__ease-in-quad);
+  }
+
   /* -------------- Media Queries -------------- */
   &.media-mobile {
     .c-application__flash-messages {
       bottom: 5%;
       left: 7%;
       max-width: 90%;
+    }
+
+    .c-application__sidenav:not(.is-visible){
+      transform: translate3d(-100%, 0, 0);
     }
   }
 
