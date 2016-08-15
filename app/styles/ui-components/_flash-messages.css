@@ -8,7 +8,7 @@
     transition:
       top var(--anim-duration__shift-element) var(--easing__ease-out-cubic),
       transform var(--anim-duration__shift-element) var(--easing__ease-out-cubic),
-      opacity var(--anim-duration__fade-in-or-out) var(--easing__ease-out-sine);
+      opacity var(--anim-duration__fade-toggle) var(--easing__ease-out-sine);
   }
 
   &__flash-message.is-active {

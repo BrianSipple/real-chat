@@ -4,7 +4,7 @@ const { Component, computed } = Ember;
 
 
 export default Component.extend({
-  tagName: 'section',  // TODO: extend with an x-navbar that just sets this to `nav` (Or just overwrite tagname in template)?
+  tagName: 'section', 
 
   classNames: [
     'c-toolbar',

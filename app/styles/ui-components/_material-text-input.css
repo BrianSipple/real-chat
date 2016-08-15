@@ -21,7 +21,7 @@
 
   &__input::placeholder {
     transition-property: opacity;
-    transition-duration: var(--anim-duration__fade-in-or-out);
+    transition-duration: var(--anim-duration__fade-toggle);
     transition-timing-function: var(--easing__ease-out-sine);
 
     opacity: 0;
