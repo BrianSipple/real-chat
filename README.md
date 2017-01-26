@@ -1,5 +1,7 @@
 # Real-chat
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/BrianSipple/real-chat-client.svg)](https://greenkeeper.io/)
+
 [![TravisCI Build Status][travis-badge]][travis-badge-url]
 
 [travis-badge]: https://img.shields.io/travis/BrianSipple/real-chat-client 
